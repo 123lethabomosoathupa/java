@@ -5,19 +5,20 @@
 package com.mycompany.chapter2;
 
 /**
- * Launches the GuessGame application by creating
- * a GuessGame object and starting the game.
- * 
+ *
  * @author letha
  */
-public class GameLauncher {
+public class DrumKitTestDrive {
 
     public static void main(String[] args) {
+        DrumKit d = new DrumKit();
 
-        // Create a new GuessGame object
-        GuessGame game = new GuessGame();
+        d.playSnare();
+        d.snare = false;
+        d.playTopHat();
 
-        // Start the game
-        game.startGame();
+        if (d.snare == true) {
+            d.playSnare();
+        }
     }
 }

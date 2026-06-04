@@ -5,19 +5,15 @@
 package com.mycompany.chapter2;
 
 /**
- * Launches the GuessGame application by creating
- * a GuessGame object and starting the game.
- * 
+ *
  * @author letha
  */
-public class GameLauncher {
+public class EpisodeTestDrive {
 
     public static void main(String[] args) {
-
-        // Create a new GuessGame object
-        GuessGame game = new GuessGame();
-
-        // Start the game
-        game.startGame();
+        Episode episode = new Episode();
+        episode.seriesNumber = 4;
+        episode.play();        // ← BUG: Episode has no play() method
+        episode.skipIntro();
     }
 }
