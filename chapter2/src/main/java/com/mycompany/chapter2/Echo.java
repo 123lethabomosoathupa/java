@@ -1,17 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.chapter2;
 
 /**
- *
- * @author letha
+ * Echo class demonstrates a simple object with a counter
+ * and a method that prints a message.
  */
 public class Echo {
 
+    // Instance variable to track how many times something happens
     int count = 0;
 
+    // Method that prints a greeting message
     void hello() {
         System.out.println("helloooo...");
     }

@@ -1,19 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.chapter2;
 
 /**
- *
- * @author letha
+ * Test class for Episode
+ * Demonstrates creating an Episode object and calling its methods.
  */
 public class EpisodeTestDrive {
 
     public static void main(String[] args) {
+
+        // Create a new Episode object
         Episode episode = new Episode();
+
+        // Set the series number for this episode
         episode.seriesNumber = 4;
-        episode.play();        // ← BUG: Episode has no play() method
+
+        // Call the play method
+        // NOTE: episodeNumber was not set, so it defaults to 0
+        episode.play();
+
+        // Call method to skip the intro
         episode.skipIntro();
     }
 }

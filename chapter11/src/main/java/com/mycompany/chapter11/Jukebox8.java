@@ -1,0 +1,24 @@
+package com.mycompany.chapter11;
+
+import java.util.*;
+
+// SongV3 doesn't override hashCode()/equals().
+// Default Object.hashCode() gives every object a unique value,
+// so HashSet thinks every song is unique — duplicates remain!
+public class Jukebox8 {
+
+    public static void main(String[] args) {
+        new Jukebox8().go();
+    }
+
+    public void go() {
+        List<SongV3> songList = MockMoreSongs.getSongsV3();
+        System.out.println(songList);
+
+        songList.sort((one, two) -> one.getTitle().compareTo(two.getTitle()));
+        System.out.println(songList);
+
+        Set<SongV3> songSet = new HashSet<>(songList);
+        System.out.println(songSet);    // STILL has duplicates!
+    }
+}

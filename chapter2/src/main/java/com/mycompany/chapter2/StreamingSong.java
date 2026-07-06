@@ -1,30 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.chapter2;
 
 /**
- *
- * @author letha
+ * StreamingSong class represents a song in a streaming system. It stores basic
+ * song information and can simulate playing or displaying details.
  */
 public class StreamingSong {
 
     // Title of the song
     String title;
 
-    // Artist who performed the song
+    // Name of the artist who performed the song
     String artist;
 
-    // Duration of the song (could be in seconds or minutes depending on use)
+    // Duration of the song (could represent seconds or minutes depending on system design)
     int duration;
 
-    // Simulates playing the song
+    // Method to simulate playing the song
     void play() {
         System.out.println("Playing song");
     }
 
-    // Prints detailed information about the song
+    // Method to display full song details
     void printDetails() {
         System.out.println("This is " + title + " by " + artist);
     }

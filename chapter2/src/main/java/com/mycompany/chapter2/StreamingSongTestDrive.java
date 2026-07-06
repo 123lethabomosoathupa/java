@@ -1,18 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.chapter2;
 
 /**
- *
- * @author letha
+ * Test class for StreamingSong
+ * Demonstrates creating a song object and using its methods.
  */
 public class StreamingSongTestDrive {
 
     public static void main(String[] args) {
 
-        // Create a new StreamingSong object
+        // Create a new StreamingSong object (instance of the class)
         StreamingSong song = new StreamingSong();
 
         // Set the artist of the song
@@ -21,10 +17,10 @@ public class StreamingSongTestDrive {
         // Set the title of the song
         song.title = "Come Together";
 
-        // Call the play method (simulates playing the song)
+        // Call play() method to simulate playing the song
         song.play();
 
-        // Print song details (title and artist)
+        // Call printDetails() to display song information
         song.printDetails();
     }
 }

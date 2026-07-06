@@ -1,19 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.chapter4;
 
+/**
+ * The Clock class represents a simple clock object
+ * that stores and returns time as a String.
+ */
 public class Clock {
 
+    // Stores the time value (e.g. "12:30", "3:45 PM")
     String time;
 
+    /**
+     * Sets the time for the clock
+     * @param t the time value to store
+     */
     void setTime(String t) {
         time = t;
     }
 
-    // BUG: getTime() declares void but tries to return a value
-    // Fix: change void to String
+    /**
+     * Returns the current time stored in the clock
+     * @return time as a String
+     */
     String getTime() {
         return time;
     }
