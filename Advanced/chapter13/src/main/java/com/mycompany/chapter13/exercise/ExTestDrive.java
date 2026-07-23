@@ -9,59 +9,54 @@ package com.mycompany.chapter13.exercise;
  *
  * @author letha
  */
+// A custom checked exception. It adds no new fields or methods of its
+// own — its only purpose is to give us a more specific, meaningful
+// exception type than just throwing a generic Exception. Extending
+// Exception (not RuntimeException) makes this a CHECKED exception,
+// which is why doRisky() below has to declare "throws MyEx".
 class MyEx extends Exception {
 }
 
 public class ExTestDrive {
 
     public static void main(String[] args) {
-
-        // Store the first command-line argument
-        String test = args[0];
+        // If you run this with a command-line argument, args[0] is used.
+        // Otherwise it defaults to "yes". This is what decides whether
+        // the exception actually gets thrown below.
+        String test = (args.length > 0) ? args[0] : "yes";
 
         try {
-            // Prints "t"
             System.out.print("t");
-
-            // Call the method that may throw a MyEx exception
+            // If doRisky() throws MyEx, execution jumps STRAIGHT to the
+            // catch block — the rest of the try block (the "o" print)
+            // never runs.
             doRisky(test);
-
-            // Executes only if no exception is thrown
             System.out.print("o");
-
         } catch (MyEx e) {
-
-            // Executes if MyEx is thrown
             System.out.print("a");
-
         } finally {
-
-            // Always executes, whether an exception occurs or not
+            // finally ALWAYS runs — whether the try block finished
+            // cleanly, or an exception was thrown and caught, or even
+            // (in other cases) if the exception was never caught at
+            // all. It's the one block you can count on executing no
+            // matter what happened above it.
             System.out.print("w");
         }
-
-        // Prints "s" after the try-catch-finally block completes
         System.out.println("s");
     }
+// "throws MyEx" in the method signature is Java forcing you to be
+    // honest: this method might fail in a specific, named way, and
+    // whoever calls it must either catch that or pass the obligation
+    // further up the chain. That's the deal with checked exceptions.
 
-    /**
-     * Prints characters and throws an exception if the
-     * argument equals "yes".
-     *
-     * @param t The string passed from the command line.
-     * @throws MyEx if the value of t is "yes".
-     */
     static void doRisky(String t) throws MyEx {
-
-        // Prints "h"
         System.out.print("h");
-
-        // If the argument is "yes", throw a custom exception
         if ("yes".equals(t)) {
+            // Throwing here immediately exits doRisky() — the "r" print
+            // below is skipped entirely, and control jumps back to
+            // whichever try block called this method.
             throw new MyEx();
         }
-
-        // Executes only if no exception is thrown
         System.out.print("r");
     }
 }
